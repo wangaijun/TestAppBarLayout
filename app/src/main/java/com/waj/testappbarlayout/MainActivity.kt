@@ -26,12 +26,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         /**导航栏*/
         setSupportActionBar(toolbar)
 
-        /**悬浮按钮*/
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-
         /**抽屉布局*/
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
