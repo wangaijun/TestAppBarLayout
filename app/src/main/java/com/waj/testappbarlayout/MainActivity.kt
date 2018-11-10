@@ -42,13 +42,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         /**抽屉布局中的导航视图*/
         nav_view.setNavigationItemSelectedListener(this)
 
-//        val adapter = SimpleAdapter(supportFragmentManager)
-//        mVpContainer.adapter = adapter
-//
-//        mVpContainer.addOnPageChangeListener(PageChangeListener.)
-//        mTlTab.set
-
-
+        val adapter = SimpleAdapter(supportFragmentManager)
+        mVpContainer.adapter = adapter
     }
 
     override fun onBackPressed() {
