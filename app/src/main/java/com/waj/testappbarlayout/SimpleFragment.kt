@@ -14,7 +14,14 @@ class SimpleFragment : Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tv.text = arguments?.getString("selectionNum")
+        val selectionNum = arguments?.getString("selectionNum")
+        tv.text = selectionNum
+        val rid = when(selectionNum){
+            "0"->R.drawable.m1
+            "1"->R.drawable.m2
+            else->R.drawable.m3
+        }
+        img.setImageResource(rid)
     }
 
     companion object {

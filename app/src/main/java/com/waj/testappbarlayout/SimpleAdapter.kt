@@ -12,8 +12,4 @@ class SimpleAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
     override fun getCount(): Int {
         return 3
     }
-
-    override fun getPageTitle(position: Int): CharSequence? {
-        return position.toString()
-    }
 }
