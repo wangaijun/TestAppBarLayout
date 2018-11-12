@@ -41,6 +41,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mVpContainer.addOnPageChangeListener(MyPageChangeListener.newInstance(adapter,appbar_iv_outgoing,appbar_iv_target))
 
         title = "changed what you want"
+
+        tabLayout.setupWithViewPager(mVpContainer)
     }
 
     override fun onBackPressed() {

@@ -21,4 +21,5 @@ class SimpleAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm) {
             else->R.drawable.m3
         }
 
+    override fun getPageTitle(position: Int): CharSequence? = "第${position}页"
 }
