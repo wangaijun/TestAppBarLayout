@@ -36,12 +36,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         nav_view.setNavigationItemSelectedListener(this)
 
         val adapter = SimpleAdapter(supportFragmentManager)
+        //用于管理切换的页面，根据不同的滑动位置显示对应的页面
         mVpContainer.adapter = adapter
-
+        //viewpager滑动时，监听器中的相应方法会被调用
         mVpContainer.addOnPageChangeListener(MyPageChangeListener.newInstance(adapter,appbar_iv_outgoing,appbar_iv_target))
 
         title = "changed what you want"
 
+        //联动效果
         tabLayout.setupWithViewPager(mVpContainer)
     }
 
