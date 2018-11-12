@@ -4,13 +4,17 @@ import android.support.annotation.DrawableRes
 import android.view.View
 import android.widget.ImageView
 
-class ImageAnimator(val mAdapter:SimpleAdapter,val mTargetImage:ImageView,val mOutgoingImage:ImageView){
-    var mStartPosition:Int = 0
-    var mMinPos:Int = 0
-    var mMaxPos:Int = 0
+/**
+ * 显示当前照片：mTargetImage
+ * 显示目标照片：mOutgoingImage
+ * */
+class ImageAnimator(private val mAdapter:SimpleAdapter, private val mTargetImage:ImageView, private val mOutgoingImage:ImageView){
+    var mStartPosition:Int = 0 //页面移动前的位置信息，用于更新页面图片
+    var mMinPos:Int = 0 //开始位置和结束位置之间的最小值
+    var mMaxPos:Int = 0 //开始位置和结束位置之间的最大值
 
     /**
-     * 启动动画，之后选择向前或向后滑动
+     * 滑动开始的动画效果
      * */
     fun start(startPosition: Int, endPosition: Int) {
         mStartPosition = startPosition
@@ -20,7 +24,7 @@ class ImageAnimator(val mAdapter:SimpleAdapter,val mTargetImage:ImageView,val mO
         //设置动画的起始图片
         mOutgoingImage.setImageDrawable(mTargetImage.drawable) //原始图片
         mOutgoingImage.translationX = 0f
-        mOutgoingImage.visibility = View.INVISIBLE
+        mOutgoingImage.visibility = View.VISIBLE
         mOutgoingImage.alpha = 1.0f
 
         //设置动画的目标图片
@@ -49,7 +53,9 @@ class ImageAnimator(val mAdapter:SimpleAdapter,val mTargetImage:ImageView,val mO
      * */
     fun forward(positionOffset: Float) {
         val width = mTargetImage.width
+        //这个ImageView逐渐往前移
         mOutgoingImage.translationX = -1 * positionOffset * (FACTOR*width)
+
         mTargetImage.translationX = (1-positionOffset) * (FACTOR*width)
         mTargetImage.alpha = positionOffset
     }
@@ -59,19 +65,21 @@ class ImageAnimator(val mAdapter:SimpleAdapter,val mTargetImage:ImageView,val mO
      * */
     fun backwards(positionOffset: Float) {
         val width = mTargetImage.width
+
         mOutgoingImage.translationX = (1-positionOffset) * (FACTOR*width)
+
         mTargetImage.translationX = -1 * positionOffset * (FACTOR*width)
         mTargetImage.alpha = 1-positionOffset
     }
 
     /**
-     * 判断位置是否在其中，用于停止动画
+     * 判断位置是否在其中，用于停止动画，用于防止快速滑动导致动画重叠
      * */
     fun isWithin(position: Int):Boolean {
         return position in mMinPos..(mMaxPos - 1)
     }
 
     companion object {
-        const val FACTOR = 0.1F
+        const val FACTOR = 0.1F //左右偏移动画的偏移度，部分偏移且偏移范围在10%以内
     }
 }
