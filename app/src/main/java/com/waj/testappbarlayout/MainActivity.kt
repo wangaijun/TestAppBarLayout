@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         val adapter = SimpleAdapter(supportFragmentManager)
         mVpContainer.adapter = adapter
+
+        mVpContainer.addOnPageChangeListener(MyPageChangeListener.newInstance())
     }
 
     override fun onBackPressed() {
