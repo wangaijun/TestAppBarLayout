@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //用于管理切换的页面，根据不同的滑动位置显示对应的页面
         mVpContainer.adapter = adapter
         //viewpager滑动时，监听器中的相应方法会被调用
-        mVpContainer.addOnPageChangeListener(MyPageChangeListener.newInstance(adapter,appbar_iv_outgoing,appbar_iv_target))
+        mVpContainer.addOnPageChangeListener(MyPageChangeListener.newInstance(adapter,appbar_iv_target,appbar_iv_outgoing))
 
         title = "changed what you want"
 
