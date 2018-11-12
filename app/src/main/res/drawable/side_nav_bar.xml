@@ -2,8 +2,15 @@
        android:shape="rectangle">
     <gradient
             android:angle="135"
-            android:centerColor="#FF3400"
-            android:endColor="#FF3E96"
-            android:startColor="#FF1493"
+            android:startColor="#FF3400"
+            android:centerColor="#FF3E96"
+            android:endColor="#FF1493"
             android:type="linear"/>
+    <!--
+        渐变的起始颜色
+        中部颜色
+        尾部颜色
+        线性变化
+        水平向右为0度，然后随着度数的增加，逆时针旋转
+     -->
 </shape>
