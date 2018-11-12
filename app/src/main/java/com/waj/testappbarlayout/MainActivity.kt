@@ -39,6 +39,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         mVpContainer.adapter = adapter
 
         mVpContainer.addOnPageChangeListener(MyPageChangeListener.newInstance())
+
+        title = "changed what you want"
     }
 
     override fun onBackPressed() {
