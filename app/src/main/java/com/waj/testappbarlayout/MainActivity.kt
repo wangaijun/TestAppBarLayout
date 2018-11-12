@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val adapter = SimpleAdapter(supportFragmentManager)
         mVpContainer.adapter = adapter
 
-        mVpContainer.addOnPageChangeListener(MyPageChangeListener.newInstance())
+        mVpContainer.addOnPageChangeListener(MyPageChangeListener.newInstance(adapter,appbar_iv_outgoing,appbar_iv_target))
 
         title = "changed what you want"
     }
