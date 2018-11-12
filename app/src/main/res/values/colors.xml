@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 主题的基础颜色 -->
     <color name="colorPrimary">#FF1493</color>
+    <!-- 主题的较深基础颜色 -->
     <color name="colorPrimaryDark">#FF1493</color>
+    <!-- 主题的强调颜色 -->
     <color name="colorAccent">#FF4081</color>
 </resources>
