@@ -17,13 +17,17 @@ class SimpleFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val selectionNum = arguments?.getString("selectionNum")
-        tv.text = selectionNum
-        val rid = when(selectionNum){
-            "0"->R.drawable.m1
-            "1"->R.drawable.m2
-            else->R.drawable.m3
+        for (i in 0..100){
+            tv.append("第${selectionNum}页\t")
+            tv.append("第${selectionNum}页\t")
+            tv.append("第${selectionNum}页\t")
+            tv.append("第${selectionNum}页\t")
+            tv.append("第${selectionNum}页\t")
+            tv.append("第${selectionNum}页\t")
+            tv.append("第${selectionNum}页\t")
+            tv.append("第${selectionNum}页\t")
+            tv.append("第${selectionNum}页\n")
         }
-        img.setImageResource(rid)
     }
 
     companion object {
